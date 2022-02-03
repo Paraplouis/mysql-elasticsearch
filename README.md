@@ -5,9 +5,9 @@ It uses `mysqldump` to fetch the origin data at first, then syncs data increment
 ## Install
 
 + Install Go (1.9+)
-+ `git clone https://github.com/siddontang/go-mysql-elasticsearchè
-+ `go get github.com/siddontang/go-mysql-elasticsearch`, it will print some messages in console, skip it. :-)
-+ cd `$GOPATH/src/github.com/siddontang/go-mysql-elasticsearch`
++ `git clone https://github.com/Paraplouis/go-mysql-elasticsearch.git`
++ `go get github.com/Paraplouis/go-mysql-elasticsearch`, it will print some messages in console, skip it. :-)
++ cd `$GOPATH/src/github.com/Paraplouis/go-mysql-elasticsearch`
 + `make`
 
 ## How to use?
@@ -188,13 +188,13 @@ type = "_doc"
 # pipeline id
 pipeline = "my-pipeline-id"
 ```
-Node: you should [create pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/put-pipeline-api.html) manually and Elasticsearch >= 5.0.
+Node: you should [create pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/put-pipeline-api.html) manually.
 
 ## Why not other rivers?
 
-Although there are some other MySQL rivers for Elasticsearch, like [elasticsearch-river-jdbc](https://github.com/jprante/elasticsearch-river-jdbc), [elasticsearch-river-mysql](https://github.com/scharron/elasticsearch-river-mysql), I still want to build a new one with Go, why?
+Although there are some other MySQL rivers for Elasticsearch, like [elasticsearch-river-jdbc](https://github.com/jprante/elasticsearch-river-jdbc), [elasticsearch-river-mysql](https://github.com/scharron/elasticsearch-river-mysql), why a fork of this one?
 
-+ Customization, I want to decide which table to be synced, the associated index and type name, or even the field name in Elasticsearch.
++ Customization, to decide which table to be synced, the associated index and type name, or even the field name in Elasticsearch.
 + Incremental update with binlog, and can resume from the last sync position when the service starts again.
-+ A common sync framework not only for Elasticsearch but also for others, like memcached, redis, etc...
-+ Wildcard tables support, we have many sub tables like table_0000 - table_1023, but want use a unique Elasticsearch index and type.
++ A common sync framework not only for Elasticsearch but also for others, like mongodb, memcached, redis, etc...
++ Wildcard tables support, when we have many sub tables like table_0000 - table_1023, but we want use a unique Elasticsearch index and type.
