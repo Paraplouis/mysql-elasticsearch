@@ -2,18 +2,10 @@ go-mysql-elasticsearch is a service syncing your MySQL data into Elasticsearch a
 
 It uses `mysqldump` to fetch the origin data at first, then syncs data incrementally with binlog.
 
-## Call for Committer/Maintainer
-Sorry that I have no enough time to maintain this project wholly, if you like this project and want to help me improve it continuously, please contact me through email (siddontang@gmail.com).
-
-Requirement: In the email, you should list somethings(including but not limited to below) to make me believe we can work together.
-
-Your GitHub ID
-The contributions to go-mysql-elasticsearch before, including PRs or Issues.
-The reason why you can improve go-mysql-elasticsearch.
-
 ## Install
 
-+ Install Go (1.9+) and set your [GOPATH](https://golang.org/doc/code.html#GOPATH)
++ Install Go (1.9+)
++ `git clone https://github.com/siddontang/go-mysql-elasticsearchè
 + `go get github.com/siddontang/go-mysql-elasticsearch`, it will print some messages in console, skip it. :-)
 + cd `$GOPATH/src/github.com/siddontang/go-mysql-elasticsearch`
 + `make`
@@ -29,8 +21,6 @@ The reason why you can improve go-mysql-elasticsearch.
 
 ## Notice
 
-+ MySQL supported version < 8.0
-+ ES supported version < 6.0
 + binlog format must be **row**.
 + binlog row image must be **full** for MySQL, you may lost some field data if you update PK data in MySQL with minimal or noblob binlog row image. MariaDB only supports full row image.
 + Can not alter table format at runtime.
@@ -208,23 +198,3 @@ Although there are some other MySQL rivers for Elasticsearch, like [elasticsearc
 + Incremental update with binlog, and can resume from the last sync position when the service starts again.
 + A common sync framework not only for Elasticsearch but also for others, like memcached, redis, etc...
 + Wildcard tables support, we have many sub tables like table_0000 - table_1023, but want use a unique Elasticsearch index and type.
-
-## Todo
-
-+ MySQL 8
-+ ES 6
-+ Statistic.
-
-## Donate
-
-If you like the project and want to buy me a cola, you can through: 
-
-|PayPal|微信|
-|------|---|
-|[![](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png)](https://paypal.me/siddontang)|[![](https://github.com/siddontang/blog/blob/master/donate/weixin.png)|
-
-## Feedback
-
-go-mysql-elasticsearch is still in development, and we will try to use it in production later. Any feedback is very welcome.
-
-Email: siddontang@gmail.com
