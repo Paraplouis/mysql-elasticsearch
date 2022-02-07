@@ -3,7 +3,7 @@ package river
 import (
 	"strings"
 
-	"github.com/paraplouis/go-mysql/schema"
+	"github.com/Paraplouis/go-mysql/schema"
 )
 
 // Rule is the rule for how to sync data from MySQL to ES.

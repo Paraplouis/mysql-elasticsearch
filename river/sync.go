@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"github.com/Paraplouis/go-log/log"
-	"github.com/Paraplouis/mysql-elasticsearch/elastic"
 	"github.com/Paraplouis/go-mysql/canal"
 	"github.com/Paraplouis/go-mysql/mysql"
 	"github.com/Paraplouis/go-mysql/replication"
 	"github.com/Paraplouis/go-mysql/schema"
+	"github.com/Paraplouis/mysql-elasticsearch/elastic"
 	"github.com/juju/errors"
 )
 
