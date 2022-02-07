@@ -8,13 +8,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Paraplouis/go-log/log"
+	"github.com/Paraplouis/mysql-elasticsearch/elastic"
+	"github.com/Paraplouis/go-mysql/canal"
+	"github.com/Paraplouis/go-mysql/mysql"
+	"github.com/Paraplouis/go-mysql/replication"
+	"github.com/Paraplouis/go-mysql/schema"
 	"github.com/juju/errors"
-	"github.com/siddontang/go-log/log"
-	"github.com/siddontang/go-mysql-elasticsearch/elastic"
-	"github.com/siddontang/go-mysql/canal"
-	"github.com/siddontang/go-mysql/mysql"
-	"github.com/siddontang/go-mysql/replication"
-	"github.com/siddontang/go-mysql/schema"
 )
 
 const (

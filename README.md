@@ -1,13 +1,13 @@
-go-mysql-elasticsearch is a service syncing your MySQL data into Elasticsearch automatically.
+mysql-elasticsearch is a service syncing your MySQL data into Elasticsearch automatically.
 
 It uses `mysqldump` to fetch the origin data at first, then syncs data incrementally with binlog.
 
 ## Install
 
 + Install Go (1.9+)
-+ `git clone https://github.com/Paraplouis/go-mysql-elasticsearch.git`
-+ `go get github.com/Paraplouis/go-mysql-elasticsearch`, it will print some messages in console, skip it. :-)
-+ cd `$GOPATH/src/github.com/Paraplouis/go-mysql-elasticsearch`
++ `git clone https://github.com/Paraplouis/mysql-elasticsearch.git`
++ `go get github.com/Paraplouis/mysql-elasticsearch`, it will print some messages in console, skip it. :-)
++ cd `$GOPATH/src/github.com/Paraplouis/mysql-elasticsearch`
 + `make`
 
 ## How to use?
@@ -17,7 +17,7 @@ It uses `mysqldump` to fetch the origin data at first, then syncs data increment
 + Config base, see the example config [river.toml](./etc/river.toml).
 + Set MySQL source in config file, see [Source](#source) below.
 + Customize MySQL and Elasticsearch mapping rule in config file, see [Rule](#rule) below.
-+ Start `./bin/go-mysql-elasticsearch -config=./etc/river.toml` and enjoy it.
++ Start `./bin/mysql-elasticsearch -config=./etc/river.toml` and enjoy it.
 
 ## Notice
 
@@ -26,12 +26,12 @@ It uses `mysqldump` to fetch the origin data at first, then syncs data increment
 + Can not alter table format at runtime.
 + MySQL table which will be synced should have a PK(primary key), multi columns PK is allowed now, e,g, if the PKs is (a, b), we will use "a:b" as the key. The PK data will be used as "id" in Elasticsearch. And you can also config the id's constituent part with other column.
 + You should create the associated mappings in Elasticsearch first, I don't think using the default mapping is a wise decision, you must know how to search accurately.
-+ `mysqldump` must exist in the same node with go-mysql-elasticsearch, if not, go-mysql-elasticsearch will try to sync binlog only.
++ `mysqldump` must exist in the same node with mysql-elasticsearch, if not, mysql-elasticsearch will try to sync binlog only.
 + Don't change too many rows at same time in one SQL.
 
 ## Source
 
-In go-mysql-elasticsearch, you must decide which tables you want to sync into elasticsearch in the source config.
+In mysql-elasticsearch, you must decide which tables you want to sync into elasticsearch in the source config.
 
 The format in config file is below:
 
@@ -59,11 +59,11 @@ tables = ["*"]
 
 ## Rule
 
-By default, go-mysql-elasticsearch will use MySQL table name as the Elasticserach's index and type name, use MySQL table field name as the Elasticserach's field name.  
+By default, mysql-elasticsearch will use MySQL table name as the Elasticserach's index and type name, use MySQL table field name as the Elasticserach's field name.  
 e.g, if a table named blog, the default index and type in Elasticserach are both named blog, if the table field named title,
 the default field name is also named title.
 
-Notice: go-mysql-elasticsearch will use the lower-case name for the ES index and type. E.g, if your table named BLOG, the ES index and type are both named blog.
+Notice: mysql-elasticsearch will use the lower-case name for the ES index and type. E.g, if your table named BLOG, the ES index and type are both named blog.
 
 Rule can let you change this name mapping. Rule format in config file is below:
 
@@ -112,9 +112,9 @@ Modifier "list" will translates a mysql string field like "a,b,c" on an elastic 
 
 ## Wildcard table
 
-go-mysql-elasticsearch only allows you determind which table to be synced, but sometimes, if you split a big table into multi sub tables, like 1024, table_0000, table_0001, ... table_1023, it is very hard to write rules for every table.
+mysql-elasticsearch only allows you determind which table to be synced, but sometimes, if you split a big table into multi sub tables, like 1024, table_0000, table_0001, ... table_1023, it is very hard to write rules for every table.
 
-go-mysql-elasticserach supports using wildcard table, e.g:
+mysql-elasticsearch supports using wildcard table, e.g:
 
 ```
 [[source]]

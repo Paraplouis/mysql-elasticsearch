@@ -7,17 +7,17 @@ import (
 	"runtime"
 	"syscall"
 
+	"github.com/Paraplouis/go-log/log"
+	"github.com/Paraplouis/mysql-elasticsearch/river"
 	"github.com/juju/errors"
-	"github.com/siddontang/go-log/log"
-	"github.com/siddontang/go-mysql-elasticsearch/river"
 )
 
-var configFile = flag.String("config", "./etc/river.toml", "go-mysql-elasticsearch config file")
+var configFile = flag.String("config", "./etc/river.toml", "mysql-elasticsearch config file")
 var my_addr = flag.String("my_addr", "", "MySQL addr")
 var my_user = flag.String("my_user", "", "MySQL user")
 var my_pass = flag.String("my_pass", "", "MySQL password")
 var es_addr = flag.String("es_addr", "", "Elasticsearch addr")
-var data_dir = flag.String("data_dir", "", "path for go-mysql-elasticsearch to save data")
+var data_dir = flag.String("data_dir", "", "path for mysql-elasticsearch to save data")
 var server_id = flag.Int("server_id", 0, "MySQL server id, as a pseudo slave")
 var flavor = flag.String("flavor", "", "flavor: mysql or mariadb")
 var execution = flag.String("exec", "", "mysqldump execution path")
