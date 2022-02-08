@@ -38,8 +38,8 @@ github.com/Paraplouis/go v0.0.0-20220207085809-7466b8dc8b85/go.mod h1:1jF1OoRv8n
 github.com/Paraplouis/go v1.0.0 h1:5XCAWJlre5znQFZOchvv90iZft2Q4NWeQI490Afb1M0=
 github.com/Paraplouis/go v1.0.0/go.mod h1:IHPDMdNY/VuKQ0iBKRdBVmkY939FrEGiu7nmP2Hnb04=
 github.com/Paraplouis/go-log v0.0.0-20220207113731-b1bae3d86664/go.mod h1:gpiWjTsSNeoXJphFxD/ebvE+LcBf9nEbecUmjxCIGI0=
-github.com/Paraplouis/go-log v1.0.0 h1:qzJEIwVy0hXA32h51YsTw8FF/vAX/0oHiBTuYH9F4Is=
-github.com/Paraplouis/go-log v1.0.0/go.mod h1:2dTrTr/L594D27KETeM9OvWR/Za18Vxkdcv6oyvAwdA=
+github.com/Paraplouis/go-log v1.1.1 h1:v2hmDKbIqXDA6UrCzomtH6ptfkFvYBJhqp3kzM5U4zo=
+github.com/Paraplouis/go-log v1.1.1/go.mod h1:2dTrTr/L594D27KETeM9OvWR/Za18Vxkdcv6oyvAwdA=
 github.com/Paraplouis/go-mysql v1.5.1 h1:q6n8/4BARmRkOU7+ziorFmIAxa/An14q/mqGd7wY4V8=
 github.com/Paraplouis/go-mysql v1.5.1/go.mod h1:e+a6giRR9tVJRIsMzhRmbjgmr8D4TfiW1KtDJbtsPr0=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
