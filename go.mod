@@ -4,9 +4,9 @@ go 1.17
 
 require (
 	github.com/BurntSushi/toml v0.3.1
-	github.com/Paraplouis/go v0.0.0-20220207085809-7466b8dc8b85
-	github.com/Paraplouis/go-log v0.0.0-20220207113731-b1bae3d86664
-	github.com/Paraplouis/go-mysql v0.0.0-20220207155024-5a18b7f415c6
+	github.com/Paraplouis/go v1.0.0
+	github.com/Paraplouis/go-log v1.0.0
+	github.com/Paraplouis/go-mysql v1.5.1
 	github.com/juju/errors v0.0.0-20220203013757-bd733f3c86b9
 	github.com/prometheus/client_golang v1.12.1
 )
